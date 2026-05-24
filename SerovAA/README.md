@@ -16,7 +16,10 @@
 bash
 - docker compose up -d
 
-Приложение будет доступно по адресу: http://localhost:8080
+## Доступные endpoints
+- Веб-приложение: http://localhost:8080
+- Prometheus метрики: http://localhost:8080/metrics (или http://localhost:9090/targets)
+- Grafana: http://localhost:3000 (логин admin / admin)
 
 ## Остановить:
 
@@ -40,7 +43,7 @@ curl -X POST http://localhost:8080/api/generate \
 Получить результат по task_id (подставьте полученный идентификатор):
 
 bash
-curl http://localhost:8080/api/result/<task_id>
+- curl http://localhost:8080/api/result/<task_id>
 
 ## CI/CD Pipeline
 При создании pull request в ветку main автоматически запускается GitHub Actions workflow:
