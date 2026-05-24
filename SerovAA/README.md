@@ -21,6 +21,17 @@ bash
 - Prometheus метрики: http://localhost:8080/metrics (или http://localhost:9090/targets)
 - Grafana: http://localhost:3000 (логин admin / admin)
 
+## Мониторинг в Grafana
+- После входа в Grafana:
+- Перейдите в Dashboards → Password Generator Monitoring.
+- Вы увидите график скорости генерации паролей, счётчик запросов и логи сервисов.
+
+## Собственная метрика
+В бэкенде реализован счётчик generate_requests_total. Он увеличивается при каждом POST /api/generate и доступен по /metrics в формате Prometheus.
+
+## Сбор логов
+Логи всех контейнеров собираются через Promtail и отправляются в Loki. В Grafana можно фильтровать логи по сервису (service="backend").
+
 ## Остановить:
 
 bash
